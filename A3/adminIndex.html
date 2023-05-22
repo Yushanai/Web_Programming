@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment3</title>
+
+ <style>
+   table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+   table{width: 90%;
+         height: 100%;
+   }
+
+    table, th, td {
+          border: 2px solid black;
+    }
+   td{height: 200px;}
+   
+   th{font-size: 2em;
+      height: 100px;
+   }
+   div{
+    height: 130px;
+    text-align: center;
+  }  
+  td.i{
+    background-color:papayawhip;
+   }
+   div.b{
+    text-align: center;
+    height: 80px;
+}
+  input{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 14px;
+}
+</style>
+
+<script type = "text/javaScript" >
+ if(sessionStorage.getItem("login")!= "connected"){
+  document.write("You are not login");
+   window.location.href = "admin.html";
+ }else{
+  document.write("You are login");
+ }
+</script>
+
+</head>
+
+<body>
+    <table class = "center">
+      <tbody>
+        <tr>
+          <th>
+            <a href="adminIndex.html">
+            Home
+            </a>  
+          </th> 
+      
+          <th>
+            <a href="adminResume.html">
+            Resume
+            </a>
+          </th> 
+      
+          <th>
+            <a href="adminProjects.html">
+            Projects
+            </a>
+          </th> 
+      
+          <th>
+            <a href="contact.html"> 
+            Contact
+            </a>
+          </th> 
+                  
+          <th>
+            <a href="adminSocial.html"> 
+            Social
+           </a>
+          </th>
+      
+          <th> 
+            <a href="admin.html"> 
+            Admin
+            </a>
+          </th>
+          </tr>
+      <tr>
+          <td colspan="6" class = "i">
+          <form action="index.php" method="post">
+            <div> 
+            <p><label for="t1"><i>Professional Statement </i></label><p>
+             <textarea id = "t1" cols="20" maxlength="200" rows="5"> 
+
+             </textarea>
+            </div>
+
+            <div> 
+            <p><label for="t2"> <i>Brief Biography </i></label><p>
+            <textarea id = "t2" cols="20" maxlength="200" rows="5"> </textarea>
+            </div>
+         
+            <div class = "b">
+              <input type="submit"/>
+            </div>    
+          </form>
+    </tr> 
+    </tbody> 
+  
+  </table>  
+  </body>
+  </html>

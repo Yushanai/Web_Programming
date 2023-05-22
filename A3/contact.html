@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment3</title>
+
+ <style>
+   table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+   table{width: 90%;
+         height: 100%;
+   }
+
+    table, th, td {
+          border: 2px solid black;
+    }
+   td{height: 100px;
+    text-align: center;}
+   
+   th{font-size: 2em;
+      height: 100px;
+   }
+   div{
+    height: 50px;
+    text-align: center;
+  }  
+  td.i{
+    background-color:papayawhip;
+   }
+  
+ </style>
+ <script type = "text/javaScript" >
+  if(sessionStorage.getItem("login")!= "connected"){
+   document.write("You are not login");
+    window.location.href = "admin.html";
+  }else{
+   document.write("You are login");
+  }
+
+  function submitContractMsg(){
+    const in1 = document.getElementById("input1");
+    const in2 = document.getElementById("input2");
+    const in3 = document.getElementById("input3");
+    const in4 = document.getElementById("input4");
+
+    let data = '\r Name: ' + in1 + ' \r\n ' + 
+    '\r Email: ' + in2 + ' \r\n '+'\r Phone number: ' + in3 + ' \r\n '
+    +'\r Message: ' + in4 + ' \r\n ';
+    const fName = 'contact3.txt';
+    // Convert the text to BLOB.
+    var dataToBlob = new File([data], fName, { type: "text/plain" });
+    let link = document.createElement("a");
+    link.download = fName;
+    link.href = window.URL.createObjectURL(dataToBlob);
+    document.body.appendChild(link);
+    link.click();
+    }
+ </script>
+</head>
+
+<body>
+    <table class = "center">
+      <tbody>
+      <tr>
+       
+      <th>
+        <a href="adminIndex.html">
+        Home
+        </a>  
+      </th> 
+  
+      <th>
+        <a href="adminResume.html">
+        Resume
+        </a>
+      </th> 
+  
+      <th>
+        <a href="adminProjects.html">
+        Projects
+        </a>
+      </th> 
+  
+      <th>
+        <a href="contact.html"> 
+        Contact
+        </a>
+      </th> 
+              
+      <th>
+        <a href="adminSocial.html"> 
+        Social
+       </a>
+      </th>
+  
+      <th> 
+        <a href="admin.html"> 
+        Admin
+        </a>
+      </th>
+        </tr>
+      <tr>
+        <td colspan="6" class ="i">
+            <label for = "input1">Enter your Fullname:</label><br>
+            <input type="text" id="input1" placeholder = "First name  Last name"> <br>
+      
+            <label for = "input2">Enter your Email:</label><br>
+            <input type="email" id="input2"> <br>
+      
+            <label for ="input3">Enter your Phone Number:</label><br>
+            <input type="number" id="input3"><br>
+      
+            <label for = "input4">Message Box:</label><br>
+            <textarea cols="20" maxlength="100" rows="4" id = "input4"> 
+            </textarea>
+
+            <div>
+                <input type="submit" value = "Submit" id = "readf" onclick="submitContractMsg()"/>
+            </div>
+          </td> 
+    </tr>   
+    </tbody> 
+  
+  </table>  
+  </body>
+  </html>

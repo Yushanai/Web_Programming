@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment3</title>
+
+ <style>
+   table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+   table{width: 90%;
+         height: 100%;
+   }
+
+    table, th, td {
+          border: 2px solid black;
+    }
+   td{height: 240px;}
+   
+   th{font-size: 2em;
+      height: 100px;
+   }
+   div{
+    height: 240px;
+    text-align: center;
+  }  
+  td.i{
+    background-color:papayawhip;
+   }
+   input{
+    text-align: center;
+   }
+ </style>
+
+ <script type = "text/javaScript" >
+  function processLogin(){
+    var username = document.getElementById("name").value;
+    var password = document.getElementById("password").value;
+    var loginTime = document.getElementById("logint").value;
+    var loginUser_a = document.getElementById("lua").value;
+
+   if(username == "yushan" && password == 123 && loginTime == 10 && loginUser_a == "Ai"){
+      window.alert("You are login!" );
+      sessionStorage.setItem("login","connected");
+      location.href="adminIndex.html";
+    }
+    else{
+      window.alert("Validation failed, please try again!" );
+      location.href="admin.html";
+    }
+   return false;
+  }
+ </script>
+ 
+</head>
+
+<body>
+<table class = "center">
+  <tbody>
+    <tr>
+    
+      <th>
+        <a href="adminIndex.html">
+        Home
+        </a>  
+      </th> 
+  
+      <th>
+        <a href="adminResume.html">
+        Resume
+        </a>
+      </th> 
+  
+      <th>
+        <a href="adminProjects.html">
+        Projects
+        </a>
+      </th> 
+  
+      <th>
+        <a href="contact.html"> 
+        Contact
+        </a>
+      </th> 
+              
+      <th>
+        <a href="adminSocial.html"> 
+        Social
+       </a>
+      </th>
+  
+      <th> 
+        <a href="admin.html"> 
+        Admin
+        </a>
+      </th>
+      </tr>
+  <tr>
+      <td colspan="6" class="i">
+        <div >
+           <br><br>
+           <form id = "login" method = "post">  
+            <label for = "name">Username:</label>
+            <input type="text" id="name"><br><br>
+            <label for = "password">Password:</label>
+            <input type="password" id="password"><br><br> 
+            <label for = "logint">Login_Time:</label>
+            <input type="text" id="logint"><br><br>  
+            <label for = "lua">Login_User-Agent:</label>
+            <input type="text" id="lua"><br><br>
+            <input type="submit" value="Login" onclick="return processLogin()">
+           </form>
+        </div>
+      </td> 
+    </tr>
+  </tbody> 
+</table>  
+</body>
+</html>
